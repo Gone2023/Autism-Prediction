@@ -1,180 +1,138 @@
-Autism Prediction System
+#  Autism Prediction System
 
-Author: Govind
+**Author:** Govind  
 
-A machine-learning–based autism screening tool that predicts the likelihood of Autism Spectrum Disorder (ASD) using questionnaire responses and demographic information.
-This project includes data preprocessing pipelines, model training notebooks, the final saved model, and an interactive interface for running predictions.
+A machine learning–based screening tool that predicts the likelihood of Autism Spectrum Disorder (ASD) using questionnaire responses and demographic data.
 
-Note: This is an educational screening tool, not a medical diagnostic system.
+>  **Disclaimer:** This is an educational screening tool and **not a medical diagnostic system**.
 
-1. Overview
+---
 
-The Autism Prediction System is designed to classify individuals as Low Risk or High Risk of Autism Spectrum Disorder (ASD).
-It demonstrates end-to-end ML development, including:
+##  Overview
 
-Dataset analysis
+The Autism Prediction System classifies individuals into:
 
-Preprocessing and encoding
+- **Low Risk (0)**
+- **High Risk (1)**
 
-Model training and evaluation
+This project demonstrates a complete end-to-end machine learning pipeline, including:
 
-Exporting and loading ML models
+- Data preprocessing  
+- Feature engineering  
+- Model training and evaluation  
+- Model serialization  
+- Interactive application interface  
 
-Building a simple application interface
+---
 
-2. Features
+##  Features
 
-End-to-end ML workflow
+- End-to-end ML workflow  
+- Handles both categorical and numerical features  
+- Binary ASD risk prediction  
+- Pretrained model included (`autism_model.pkl`)  
+- Interactive UI using Streamlit  
+- Well-structured notebooks  
 
-Handles both categorical and numerical features
+---
 
-Produces binary ASD risk predictions
+##  Dataset
 
-Includes a pretrained model (autism_model.pkl)
+### Features
+- 10 ASD screening question scores (binary)  
+- Age  
+- Gender  
+- Ethnicity  
+- Jaundice history (Yes/No)  
+- Family autism history  
+- Relation to the individual  
+- Country of residence  
 
-Streamlit interface for interactive use
+### Target
+- `0 → Low Risk`  
+- `1 → High Risk`  
 
-Well-organized notebook analysis
+---
 
-3. Dataset
+##  Data Preprocessing
 
-The dataset includes:
+- Label encoding of categorical features  
+- Normalization of numerical values  
+- Handling missing or inconsistent data  
+- Feature vector construction  
 
-Ten ASD screening question scores (binary)
+---
 
-Age
+##  Model Development
 
-Gender
+### Algorithms Explored
+- Logistic Regression  
+- Random Forest  
+- Support Vector Classifier (SVC)  
+- Gradient Boosting  
 
-Ethnicity
+### Final Model
+- autism_model.pkl
 
-Jaundice history
 
-Family autism history
+---
 
-Relation to child
+##  Evaluation Metrics
 
-Country of residence
+- Accuracy  
+- Precision  
+- Recall  
+- F1 Score  
+- Confusion Matrix  
 
-ASD risk label: 0 (Low Risk), 1 (High Risk)
+Detailed results are available in the notebooks.
 
-Preprocessing includes:
+---
 
-Label encoding of categorical values
+##  Usage Guide
 
-Normalizing numeric inputs
-
-Cleaning and validating entries
-
-Constructing the final feature vector
-
-4. Model Development
-4.1 Preprocessing
-
-Encoding categorical features
-
-Normalization
-
-Handling missing or inconsistent entries
-
-4.2 Algorithms Explored
-
-Multiple supervised learning algorithms were evaluated, such as:
-
-Logistic Regression
-
-Random Forest
-
-Support Vector Classifier
-
-Gradient Boosting
-
-The final model is stored as:
-
-autism_model.pkl
-
-4.3 Evaluation Metrics
-
-Model performance is assessed using:
-
-Accuracy
-
-Precision
-
-Recall
-
-F1 Score
-
-Confusion Matrix
-
-Detailed results are available in the accompanying notebooks.
-
-5. Usage Guide
-Input Fields
-
-The application collects:
-
-Age
-
-Gender
-
-Ethnicity
-
-Jaundice (Yes/No)
-
-Family autism history
-
-Relation to the child
-
-Ten ASD screening questions
-
-Country of residence
-
-Output
-
-The model returns:
-
-Prediction: Low Risk or High Risk
-
-Optional: Probability of the prediction
-
-6. Future Improvements
-
-Planned enhancements:
-
-Replacing Streamlit with a complete web frontend (HTML/CSS/JS)
-
-Backend API using Flask or FastAPI
-
-Improved UI/UX
-
-Optional database integration
-
-Deployment on cloud platforms
-
-Adding SHAP/feature-importance visualizations
-
-7. Limitations
-
-Not suitable for clinical diagnosis
-
-Dataset size is limited
-
-Depends heavily on self-reported questionnaire data
-
-Model accuracy varies with demographic encoding
-
-8. License
-
+### Input Fields
+- Age  
+- Gender  
+- Ethnicity  
+- Jaundice (Yes/No)  
+- Family autism history  
+- Relation  
+- Country of residence  
+- 10 ASD screening question responses  
+
+### Output
+- Prediction: **Low Risk / High Risk**  
+- Optional: Probability score  
+
+---
+
+##  How to Run
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/autism-prediction-system.git
+cd autism-prediction-system
+``` 
+### 2. Install dependencies
+```bash    
+pip install -r requirements.txt
+```
+### 3. Run Streamlit app
+```bash
+streamlit run app.py
+```
+### Future Improvements
+- Full frontend (HTML, CSS, JavaScript)
+- Backend API using Flask or FastAPI
+- Improved UI/UX
+- Database integration
+- Cloud deployment
+- SHAP / feature importance visualization
+
+###  License
 This project is licensed under the MIT License.
 
-9. Acknowledgements
-
-Public ASD Screening Dataset
-
-scikit-learn and Streamlit open-source communities
-
-10. Contact
-
+###  Contact
 Govind
 B.Tech CSE, Bennett University
